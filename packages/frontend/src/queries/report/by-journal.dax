@@ -1,0 +1,10 @@
+EVALUATE
+TOPN(
+  10,
+  SUMMARIZECOLUMNS(
+    'Revistas'[Revista],
+    "Publicaciones", [Publicaciones observadas],
+    "CoberturaORCID", [Porcentaje con ORCID]
+  ),
+  [Publicaciones], DESC
+)

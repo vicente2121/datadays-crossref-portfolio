@@ -10,7 +10,7 @@
 | Carpeta Fabric | `03-Crossref` · `4b9173ac-c07c-498b-8178-6584467bc4d1` |
 | App Rayfin | `datadays-crossref-portfolio` · `93da42f6-7bc3-4dcd-bf89-963b3615ab27` |
 | Elementos de este caso | `DD03_LH_Crossref`, `DD03_NB_Crossref_Incremental`, `DD03_PL_Crossref_Incremental`, `DD03_SM_Crossref`, `DD03_Informe_Crossref` |
-| Acceso | Fabric SSO; portafolio documental sin datos propios ni roles de app |
+| Acceso | Fabric SSO; informe integrado por conector delegado al modelo Direct Lake, sin datos propios ni roles de app |
 | Cuenta del desarrollador | `juanvicente@ajmvicente21hotmail.onmicrosoft.com` |
 | Sincronización Git del workspace | Desactivada; las publicaciones se hacen con CLI/API y los repositorios se mantienen separados |
 
@@ -33,8 +33,12 @@ Solo se crean o modifican los elementos enumerados arriba y la app de esta ficha
 | Modelo Direct Lake | `2c0d666b-0d4d-451a-82f5-d244e9f5c760` |
 | Informe | `039172b3-f877-437c-928e-37dd706d0968` |
 
+## Informe en la app
+
+La sección Informe lee el modelo semántico de esta ficha mediante consultas DAX en packages/frontend/src/queries/report/. El acceso se delega al usuario autenticado. El recorrido técnico y las relaciones están en [arquitectura.md](arquitectura.md).
+
 ## Riesgos para producción
 
 - Crossref puede imponer límites de consulta; el caso cubre solo cinco ISSN.
-- El informe copiado requiere conexión al modelo del Lakehouse de este workspace.
+- El informe publicado está vinculado al modelo Direct Lake de este workspace; una réplica en otro workspace debe volver a vincularlo.
 - La visibilidad de los datos del Lakehouse depende de los permisos del workspace; revisar antes de uso productivo.

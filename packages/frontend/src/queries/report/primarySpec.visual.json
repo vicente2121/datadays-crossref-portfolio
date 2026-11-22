@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 4
+  },
+  "encoding": {
+    "y": {
+      "field": "Revista",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null
+    },
+    "x": {
+      "field": "Publicaciones",
+      "type": "quantitative",
+      "title": "DOI observados"
+    },
+    "tooltip": [
+      {
+        "field": "Revista",
+        "type": "nominal",
+        "title": "Revista"
+      },
+      {
+        "field": "Publicaciones",
+        "type": "quantitative",
+        "title": "Publicaciones",
+        "format": ",.0f"
+      },
+      {
+        "field": "CoberturaORCID",
+        "type": "quantitative",
+        "title": "Con ORCID",
+        "format": ".1%"
+      }
+    ]
+  }
+}

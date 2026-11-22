@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "mark": {
+    "type": "area",
+    "line": true,
+    "point": true,
+    "opacity": 0.55
+  },
+  "encoding": {
+    "x": {
+      "field": "Semana",
+      "type": "temporal",
+      "title": "Semana",
+      "axis": {
+        "format": "%d %b"
+      }
+    },
+    "y": {
+      "field": "Publicaciones",
+      "type": "quantitative",
+      "title": "Publicaciones nuevas"
+    },
+    "tooltip": [
+      {
+        "field": "Semana",
+        "type": "temporal",
+        "title": "Semana",
+        "format": "%d %B %Y"
+      },
+      {
+        "field": "Publicaciones",
+        "type": "quantitative",
+        "title": "Publicaciones",
+        "format": ",.0f"
+      }
+    ]
+  }
+}

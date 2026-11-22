@@ -45,3 +45,5 @@ rayfin.config.json
 *.njsproj
 *.sln
 *.sw?
+.schema/
+.fabric-app-semantic-model-tools-*/

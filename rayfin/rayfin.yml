@@ -30,3 +30,14 @@ services:
     enabled: false
   functions:
     enabled: false
+connectors:
+  - name: crossrefmodel
+    type: fabric-semanticmodel
+    config:
+      workspaceId: 0245bb51-e0d1-40f1-b071-fcbbf1d7b155
+      itemId: 2c0d666b-0d4d-451a-82f5-d244e9f5c760
+    auth:
+      type: delegated
+    version: "1"
+    operations:
+      - name: executeQuery

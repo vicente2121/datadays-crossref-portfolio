@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { ArrowRight, ArrowUpRight, BookOpen, Check, ChevronRight, ExternalLink, FileCode2, FolderOpen, Layers3, Menu, Moon, Sun, X } from 'lucide-react';
 import { useTheme } from './hooks/theme.context';
 import { caseStudy } from './portfolio.data';
+import LiveReport from './LiveReport';
 
 const navigation = [
   { label: 'El caso', href: '#caso' },
   { label: 'Arquitectura', href: '#arquitectura' },
+  { label: 'Informe', href: '#informe' },
   { label: 'Resultados', href: '#resultados' },
   { label: 'Material', href: '#material' },
 ];
@@ -83,14 +85,16 @@ export default function PortfolioApp() {
         </div>
       </section>
 
+      <LiveReport />
+
       <section className="portfolio__section portfolio__results" id="resultados" aria-labelledby="results-title">
-        <div className="portfolio__section-heading"><div><p className="portfolio__section-index">03 / RESULTADOS</p><h2 id="results-title">Preguntas que resuelve.</h2></div><p>{caseStudy.resultsIntro}</p></div>
+        <div className="portfolio__section-heading"><div><p className="portfolio__section-index">04 / RESULTADOS</p><h2 id="results-title">Preguntas que resuelve.</h2></div><p>{caseStudy.resultsIntro}</p></div>
         <div className="portfolio__outcome-grid">{caseStudy.outcomes.map((outcome, index) => <article className="portfolio__outcome" key={outcome.question}><span>0{index + 1}</span><h3>{outcome.question}</h3><p>{outcome.answer}</p></article>)}</div>
         <div className="portfolio__limits"><strong>Alcance honesto</strong><p>{caseStudy.limit}</p></div>
       </section>
 
       <section className="portfolio__section portfolio__materials" id="material" aria-labelledby="materials-title">
-        <div className="portfolio__section-heading"><div><p className="portfolio__section-index">04 / MATERIAL</p><h2 id="materials-title">Abre el proyecto.</h2></div><p>Este repositorio incluye los artefactos del caso, tomados del material general de Data Days.</p></div>
+        <div className="portfolio__section-heading"><div><p className="portfolio__section-index">05 / MATERIAL</p><h2 id="materials-title">Abre el proyecto.</h2></div><p>Este repositorio incluye los artefactos del caso, tomados del material general de Data Days.</p></div>
         <div className="portfolio__artifact-grid">{caseStudy.artifacts.map((artifact) => <a href={artifact.href} className="portfolio__artifact" key={artifact.title} target="_blank" rel="noreferrer"><span className="portfolio__artifact-icon">{artifact.kind === 'guide' ? <BookOpen aria-hidden="true" /> : artifact.kind === 'code' ? <FileCode2 aria-hidden="true" /> : <FolderOpen aria-hidden="true" />}</span><span><strong>{artifact.title}</strong><small>{artifact.description}</small></span><ExternalLink aria-hidden="true" /></a>)}</div>
         <div className="portfolio__replica"><div><p className="portfolio__section-index">PARA REPRODUCIRLO</p><h3>{caseStudy.replicaTitle}</h3></div><ol>{caseStudy.replicaSteps.map((step) => <li key={step}>{step}</li>)}</ol></div>
       </section>

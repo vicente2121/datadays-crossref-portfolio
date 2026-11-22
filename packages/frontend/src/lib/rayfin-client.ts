@@ -5,12 +5,19 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-import { browserSession } from '@microsoft/rayfin-auth';
 import { RayfinClient, resolveRayfinConfig } from '@microsoft/rayfin-client';
+import { browserSession } from '@microsoft/rayfin-auth';
 import { dataService } from '@microsoft/rayfin-data';
+import { connectorsService } from '@microsoft/rayfin-connectors';
 import type { UniversalAppSchema } from '@rayfin-app/shared';
+import {
+  connectorConfigs,
+  connectorRuntimes,
+  type AppConnectorsSchema,
+} from './connectors';
 
 export type AppClient = ReturnType<typeof createClient>;
+
 let _client: Promise<AppClient> | undefined;
 
 export class MissingRayfinConfigError extends Error {
@@ -20,20 +27,7 @@ export class MissingRayfinConfigError extends Error {
   }
 }
 
-/**
- * Resolves and shares the app's configured Rayfin client.
- *
- * Typed by `UniversalAppSchema`, so `client.data.<Entity>` is checked against
- * the entities declared by `@rayfin-app/data`. Without the generic the
- * data API is `any`, and a typo in an entity or field name only surfaces at
- * runtime — which the app's `tsc --noCheck` build would never catch.
- *
- * Async because deployment-specific values are resolved at runtime rather than
- * compiled in: a Deployment Pipeline promotes one built artifact from Dev to
- * Prod, so a bundle carrying build-time `VITE_*` values would point the
- * promoted app at the previous stage's backend. The `VITE_*` values are still
- * passed as defaults, which is what local dev runs on.
- */
+/** Returns the app's typed data, auth, and connector client. */
 export async function getRayfinClient(): Promise<AppClient> {
   if (!_client) {
     _client = resolveClient().catch((error) => {
@@ -78,6 +72,12 @@ function createClient(config: {
   return RayfinClient.create({
     ...config,
     auth: browserSession({ storage: true }),
-    services: { data: dataService<UniversalAppSchema>() },
+    services: {
+      data: dataService<UniversalAppSchema>(),
+      connectors: connectorsService<AppConnectorsSchema>({
+        configs: connectorConfigs,
+        runtime: connectorRuntimes,
+      }),
+    },
   });
 }

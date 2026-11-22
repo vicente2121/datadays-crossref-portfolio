@@ -1,0 +1,7 @@
+EVALUATE
+ROW(
+  "Publicaciones", [Publicaciones observadas],
+  "CoberturaORCID", [Porcentaje con ORCID],
+  "CoberturaResumen", [Porcentaje con resumen],
+  "EstadoCarga", [Estado última carga]
+)

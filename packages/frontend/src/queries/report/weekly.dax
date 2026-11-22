@@ -1,0 +1,9 @@
+EVALUATE
+TOPN(
+  12,
+  SUMMARIZECOLUMNS(
+    'Semanas'[Semana],
+    "Publicaciones", [Publicaciones nuevas]
+  ),
+  'Semanas'[Semana], DESC
+)

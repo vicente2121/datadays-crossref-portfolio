@@ -336,3 +336,23 @@ button, a { -webkit-tap-highlight-color: transparent; }
   --color-border: #3e5370; --color-input: #3e5370; --color-ring: #f2c777;
   --portfolio-art: #2e517d; --portfolio-art-deep: #101f3a;
 }
+
+/* Informe conectado al modelo semántico publicado */
+.live-report { scroll-margin-top: 24px; }
+.live-report__toolbar { margin: 26px 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+.live-report__model { display: inline-flex; align-items: center; gap: 9px; color: var(--color-muted-foreground); font: 600 11px var(--font-monospace); letter-spacing: .04em; text-transform: uppercase; }
+.live-report__model span { width: 8px; height: 8px; border-radius: 50%; background: var(--color-primary); box-shadow: 0 0 0 4px var(--color-accent); }
+.live-report__toolbar > div { display: flex; gap: 10px; flex-wrap: wrap; }
+.live-report__toolbar button, .live-report__toolbar a, .live-report__state button { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 13px; border: 1px solid var(--color-border); border-radius: 10px; background: var(--color-card); color: var(--color-foreground); font-size: 12px; font-weight: 700; text-decoration: none; cursor: pointer; }
+.live-report__toolbar svg { width: 15px; height: 15px; }
+.live-report__kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-bottom: 14px; }
+.live-report__kpi { min-width: 0; }
+.live-report__charts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.live-report__charts > * { min-width: 0; }
+.live-report__state { min-height: 160px; display: flex; flex-direction: column; justify-content: center; padding: 26px; border: 1px solid var(--color-border); border-radius: 20px; background: var(--color-card); color: var(--color-muted-foreground); }
+.live-report__state strong { color: var(--color-foreground); }
+.live-report__state p { max-width: 72ch; overflow-wrap: anywhere; }
+.live-report__state button { align-self: flex-start; }
+.live-report__disclosure { margin: 18px 0 0; color: var(--color-muted-foreground); font-size: 11px; line-height: 1.6; }
+@media (max-width: 960px) { .live-report__kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } .live-report__charts { grid-template-columns: 1fr; } }
+@media (max-width: 580px) { .live-report__kpis { grid-template-columns: 1fr; } }

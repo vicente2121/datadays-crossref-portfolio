@@ -15,6 +15,7 @@ Fabric App tipo portafolio del caso 03 de DP-600: ingesta incremental de metadat
 | [`fabric/`](fabric/) | Copias de despliegue vinculadas al modelo y Lakehouse nuevos |
 | [`case-source/infraestructura/`](case-source/infraestructura/) | Guía de replicación y PDF |
 | [`case-source/requisitos/`](case-source/requisitos/) | Preguntas de negocio y medidas del caso |
+| [`docs/arquitectura.md`](docs/arquitectura.md) | Flujo fuente → Bronze → Silver → Gold → modelo, con diagramas y relaciones |
 | [`docs/proyecto.md`](docs/proyecto.md) | Workspace, carpeta e inventario de recursos de esta app |
 
 Los artefactos proceden del [repositorio general de Data Days](https://github.com/vicente2121/DATADAYS_DP600/tree/main/charla03/caso_03_observatorio_crossref). El workspace de Fabric **no está sincronizado con Git**.
@@ -38,3 +39,7 @@ npm run dev
 ```
 
 Consulta [`docs/rayfin-template.md`](docs/rayfin-template.md) para los comandos de la plantilla oficial.
+
+## Informe dentro de la Fabric App
+
+La sección **Informe** consulta el modelo semántico publicado con el conector delegado de Rayfin. Muestra cuatro indicadores y dos gráficas basados en consultas DAX verificadas, con estado de carga y errores visibles. Consulta [las consultas y los visuales](packages/frontend/src/queries/report/) y el [mapa de datos](docs/arquitectura.md). El informe de Power BI enlazado arriba ofrece las páginas analíticas completas.
