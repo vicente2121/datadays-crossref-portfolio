@@ -12,7 +12,8 @@ flowchart LR
   D --> E[Gold: actividad, revistas,<br/>editoriales, tipos, calendario]
   E --> F[DD03_SM_Crossref<br/>Direct Lake]
   F --> G[Informe Power BI]
-  F --> H[Informe dentro de la Fabric App]
+  F --> H[Conector Rayfin<br/>DAX delegado]
+  H --> I[Informe dentro de la Fabric App]
   B --> W[dbo.crossref_control<br/>watermark]
   W --> B
 ```
@@ -38,6 +39,9 @@ erDiagram
 Las tres relaciones son activas y de una dirección. `Editoriales` y `Ejecuciones` aportan resúmenes y auditoría sin unirse artificialmente a las revistas. La Fabric App y Power BI leen `DD03_SM_Crossref`; los materiales originales y las definiciones publicadas están en [`case-source/`](../case-source/) y [`fabric/`](../fabric/).
 
 ## Informe dentro de la Fabric App
+
+El conector Rayfin de este caso consulta el modelo con la identidad delegada del usuario. Rayfin publicó su puente UserDataFunction en la misma carpeta de Fabric; el código de la app y el alias del conector están en este repositorio.
+
 
 La pestaña **Informe** consulta `DD03_SM_Crossref` con Rayfin y permisos delegados. Las consultas DAX están en [`packages/frontend/src/queries/report/`](../packages/frontend/src/queries/report/). El panel muestra DOI observados, cobertura ORCID, cobertura de resúmenes y estado de la última carga; representa publicaciones por revista y actividad de las doce semanas más recientes.
 

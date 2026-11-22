@@ -9,7 +9,7 @@
 | Workspace DEV | `DataDays-FabricApps-Portfolio-DEV` · `0245bb51-e0d1-40f1-b071-fcbbf1d7b155` |
 | Carpeta Fabric | `03-Crossref` · `4b9173ac-c07c-498b-8178-6584467bc4d1` |
 | App Rayfin | `datadays-crossref-portfolio` · `93da42f6-7bc3-4dcd-bf89-963b3615ab27` |
-| Elementos de este caso | `DD03_LH_Crossref`, `DD03_NB_Crossref_Incremental`, `DD03_PL_Crossref_Incremental`, `DD03_SM_Crossref`, `DD03_Informe_Crossref` |
+| Elementos de este caso | `DD03_LH_Crossref`, `DD03_NB_Crossref_Incremental`, `DD03_PL_Crossref_Incremental`, `DD03_SM_Crossref`, `DD03_Informe_Crossref`, `datadays_crossref_portfolio_connector` |
 | Acceso | Fabric SSO; informe integrado por conector delegado al modelo Direct Lake, sin datos propios ni roles de app |
 | Cuenta del desarrollador | `juanvicente@ajmvicente21hotmail.onmicrosoft.com` |
 | Sincronización Git del workspace | Desactivada; las publicaciones se hacen con CLI/API y los repositorios se mantienen separados |
@@ -32,6 +32,7 @@ Solo se crean o modifican los elementos enumerados arriba y la app de esta ficha
 | Pipeline | `a40ae531-0976-4d16-9a57-d6cd207d99d5` |
 | Modelo Direct Lake | `2c0d666b-0d4d-451a-82f5-d244e9f5c760` |
 | Informe | `039172b3-f877-437c-928e-37dd706d0968` |
+| Conector Rayfin (UserDataFunction) | `18a39c01-7e15-4ffa-9396-df2478c7840c` |
 
 ## Informe en la app
 
