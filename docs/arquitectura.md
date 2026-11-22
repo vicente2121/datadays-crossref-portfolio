@@ -6,14 +6,14 @@ La solución está en la carpeta `03-Crossref` del [workspace Data Days](https:/
 
 ```mermaid
 flowchart LR
-  A[Crossref API\ncinco ISSN] --> B[NB incremental\nventana + cursor]
-  B --> C[Files/bronze/crossref\ny bronze.crossref_raw_pages]
-  C --> D[silver.publications\nDOI normalizado]
-  D --> E[Gold: actividad, revistas,\neditoriales, tipos, calendario]
-  E --> F[DD03_SM_Crossref\nDirect Lake]
+  A[Crossref API<br/>cinco ISSN] --> B[NB incremental<br/>ventana + cursor]
+  B --> C[Files/bronze/crossref<br/>y bronze.crossref_raw_pages]
+  C --> D[silver.publications<br/>DOI normalizado]
+  D --> E[Gold: actividad, revistas,<br/>editoriales, tipos, calendario]
+  E --> F[DD03_SM_Crossref<br/>Direct Lake]
   F --> G[Informe Power BI]
   F --> H[Informe dentro de la Fabric App]
-  B --> W[dbo.crossref_control\nwatermark]
+  B --> W[dbo.crossref_control<br/>watermark]
   W --> B
 ```
 

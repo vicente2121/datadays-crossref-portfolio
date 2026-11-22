@@ -43,3 +43,22 @@ Consulta [`docs/rayfin-template.md`](docs/rayfin-template.md) para los comandos 
 ## Informe dentro de la Fabric App
 
 La sección **Informe** consulta el modelo semántico publicado con el conector delegado de Rayfin. Muestra cuatro indicadores y dos gráficas basados en consultas DAX verificadas, con estado de carga y errores visibles. Consulta [las consultas y los visuales](packages/frontend/src/queries/report/) y el [mapa de datos](docs/arquitectura.md). El informe de Power BI enlazado arriba ofrece las páginas analíticas completas.
+
+## Los tres casos de Data Days
+
+| Caso | Repositorio público | Fabric App |
+| --- | --- | --- |
+| 01 · Criptomonedas | [Código y arquitectura](https://github.com/vicente2121/datadays-cripto-portfolio) | [Abrir app](https://early-tower-5ef68d90a6-spaincentral.webapp.fabricapps.net) |
+| 02 · Combustibles | [Código y arquitectura](https://github.com/vicente2121/datadays-combustibles-portfolio) | [Abrir app](https://spicy-bloom-1cb1cf0b08-spaincentral.webapp.fabricapps.net) |
+| 03 · Crossref | [Código y arquitectura](https://github.com/vicente2121/datadays-crossref-portfolio) | [Abrir app](https://rural-unity-56e33da5da-spaincentral.webapp.fabricapps.net) |
+
+Los tres casos comparten un único workspace de Fabric, cada uno en su carpeta. Cada solución tiene su propio repositorio GitHub; el workspace no está conectado a Git.
+
+
+## Capturas de la app publicada
+
+| Portada | Informe integrado |
+| --- | --- |
+| [![Portada de Crossref](docs/capturas/portada.png)](docs/capturas/portada.png) | [![Indicadores y gráficas de Crossref](docs/capturas/informe.png)](docs/capturas/informe.png) |
+
+Capturadas en la URL publicada con la cuenta de desarrollo el 22-11-2026. El informe muestra datos consultados al modelo Direct Lake, no una maqueta.
