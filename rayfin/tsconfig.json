@@ -1,0 +1,17 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": ".temp/compiled",
+    "rootDir": ".",
+    "declaration": true,
+    "composite": true,
+    "noEmit": false,
+    "allowImportingTsExtensions": false,
+    "types": ["node"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "tsBuildInfoFile": ".temp/rayfin.tsbuildinfo"
+  },
+  "include": ["**/*"],
+  "exclude": [".temp/**/*", "functions/**/*"]
+}

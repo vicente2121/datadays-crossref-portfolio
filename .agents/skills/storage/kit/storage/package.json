@@ -1,0 +1,15 @@
+{
+  "name": "@rayfin-app/storage",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "dependencies": {
+    "@microsoft/rayfin-core": "^2.0.1"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.2"
+  }
+}

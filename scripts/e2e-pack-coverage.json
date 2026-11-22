@@ -1,0 +1,43 @@
+{
+  "testPacks": [
+    {
+      "name": "expense-tracker-with-receipts",
+      "capabilityPacks": ["data-modeling", "storage"]
+    },
+    {
+      "name": "sales-dashboard-with-charts",
+      "capabilityPacks": ["analytics", "visuals"]
+    },
+    {
+      "name": "sales-dashboard-with-private-notes",
+      "capabilityPacks": ["analytics", "visuals", "data-modeling"]
+    },
+    {
+      "name": "receipt-processing",
+      "capabilityPacks": ["storage", "functions", "data-modeling"]
+    },
+    {
+      "name": "fulfillment-request",
+      "capabilityPacks": ["data-modeling", "functions"]
+    },
+    {
+      "name": "warehouse-dashboard",
+      "capabilityPacks": ["connectors", "visuals"]
+    },
+    {
+      "name": "warehouse-investigation",
+      "capabilityPacks": ["connectors", "visuals", "data-modeling", "storage"]
+    },
+    {
+      "name": "complete-stack",
+      "capabilityPacks": [
+        "analytics",
+        "connectors",
+        "data-modeling",
+        "functions",
+        "storage",
+        "visuals"
+      ]
+    }
+  ]
+}

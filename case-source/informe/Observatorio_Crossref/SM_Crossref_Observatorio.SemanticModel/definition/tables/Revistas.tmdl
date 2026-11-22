@@ -1,0 +1,66 @@
+/// Una fila por revista y métricas de completitud de metadatos.
+table Revistas
+	lineageTag: 1fa8a6fd-6f1d-4660-a0b0-8122f6a1ae1f
+
+	/// DOI únicos observados por revista.
+	measure 'Publicaciones observadas' = SUM('Revistas'[Publicaciones])
+		formatString: #,##0
+		lineageTag: 9f902c98-b2f9-431d-8a66-a8882c498a29
+
+	/// Cobertura de identificadores ORCID.
+	measure 'Porcentaje con ORCID' = DIVIDE(SUM('Revistas'[Con ORCID]), [Publicaciones observadas])
+		formatString: 0.0%
+		lineageTag: 9921fdd6-f8c8-4d10-9134-7046d1dc7cd7
+
+	/// Cobertura del resumen en metadatos Crossref.
+	measure 'Porcentaje con resumen' = DIVIDE(SUM('Revistas'[Con resumen]), [Publicaciones observadas])
+		formatString: 0.0%
+		lineageTag: 5acac5f5-ad47-4b51-b8cb-3e97c74d0487
+
+	/// Cobertura de licencia en metadatos Crossref.
+	measure 'Porcentaje con licencia' = DIVIDE(SUM('Revistas'[Con licencia]), [Publicaciones observadas])
+		formatString: 0.0%
+		lineageTag: ae6396d9-3a8e-4af5-8ce6-c27cf3062d26
+
+	column ISSN
+		dataType: string
+		isHidden
+		isKey
+		lineageTag: c696a2d4-46e6-4937-a087-c2f2b7d83d86
+		sourceColumn: issn
+
+	column Revista
+		dataType: string
+		lineageTag: 99e56dae-20a3-45c9-94c7-681036984332
+		sourceColumn: journal_name
+
+	column Publicaciones
+		dataType: int64
+		isHidden
+		lineageTag: 773635e4-2e03-40fa-86bb-3013e7d1f492
+		sourceColumn: publications
+
+	column 'Con ORCID'
+		dataType: int64
+		isHidden
+		lineageTag: 074bb2d4-fc3c-47b5-b09c-1d44164102f5
+		sourceColumn: with_orcid
+
+	column 'Con resumen'
+		dataType: int64
+		isHidden
+		lineageTag: d3793870-725b-4ecf-8b55-16a8d4c8bf7a
+		sourceColumn: with_abstract
+
+	column 'Con licencia'
+		dataType: int64
+		isHidden
+		lineageTag: 7645309f-14d0-4f54-8ea3-b8cf86622e83
+		sourceColumn: with_license
+
+	partition Revistas = entity
+		mode: directLake
+		source
+			entityName: journal_quality_summary
+			schemaName: gold
+			expressionSource: 'DirectLake - Crossref'

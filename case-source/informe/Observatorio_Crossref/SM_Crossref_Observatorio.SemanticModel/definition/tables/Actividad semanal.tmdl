@@ -1,0 +1,85 @@
+/// Registros creados en Crossref por revista y semana.
+table 'Actividad semanal'
+	lineageTag: 004184c5-070d-497c-9392-d236856c4bdd
+
+	/// Registros creados en Crossref por semana y revista.
+	measure 'Publicaciones nuevas' = SUM('Actividad semanal'[Recuento semanal])
+		formatString: #,##0
+		lineageTag: 0c562da7-38f9-4fe6-bdf3-90a2454de745
+
+	/// Registros de la última semana cerrada; excluye la semana en curso.
+	measure 'Publicaciones última semana' =
+			VAR _lunesActual = TODAY() - WEEKDAY(TODAY(), 2) + 1
+			VAR _semanaCerrada = MAXX(FILTER(ALL('Semanas'[Semana]), 'Semanas'[Semana] < _lunesActual), 'Semanas'[Semana])
+			RETURN CALCULATE([Publicaciones nuevas], 'Semanas'[Semana] = _semanaCerrada)
+		formatString: #,##0
+		lineageTag: eecf12fb-84e4-49b1-b36f-4957bb70a942
+
+	/// Media de las cuatro semanas cerradas anteriores a la última semana cerrada.
+	measure 'Media cuatro semanas previas' =
+			VAR _lunesActual = TODAY() - WEEKDAY(TODAY(), 2) + 1
+			VAR _semanaCerrada = MAXX(FILTER(ALL('Semanas'[Semana]), 'Semanas'[Semana] < _lunesActual), 'Semanas'[Semana])
+			VAR _totalPrevio = CALCULATE([Publicaciones nuevas], FILTER(ALL('Semanas'[Semana]), 'Semanas'[Semana] >= _semanaCerrada - 28 && 'Semanas'[Semana] < _semanaCerrada))
+			RETURN DIVIDE(_totalPrevio, 4)
+		formatString: #,##0.0
+		lineageTag: 26107e2a-40f5-4a82-a17a-f076e11aa37c
+
+	/// Cambio de la última semana cerrada frente a la media de las cuatro semanas cerradas anteriores.
+	measure 'Variación frente a cuatro semanas' = DIVIDE([Publicaciones última semana] - [Media cuatro semanas previas], [Media cuatro semanas previas])
+		formatString: 0.0%
+		lineageTag: fe3abeae-784b-41d3-a30d-39a98b1c38f8
+
+	/// Serie semanal de las cinco semanas más recientes; incluye la semana en curso.
+	measure 'Publicaciones últimas cinco semanas' =
+			VAR _ultima = MAXX(ALL('Semanas'[Semana]), 'Semanas'[Semana])
+			VAR _semana = MAX('Semanas'[Semana])
+			RETURN IF(_semana >= _ultima - 28 && _semana <= _ultima, [Publicaciones nuevas])
+		formatString: #,##0
+		lineageTag: d8ebbff2-fd5b-4621-b055-db4bc9a11d31
+
+	column ISSN
+		dataType: string
+		isHidden
+		lineageTag: 05dd9087-9ea3-4613-a36f-0284f343d608
+		sourceColumn: issn
+
+	column Revista
+		dataType: string
+		lineageTag: af49b704-0264-4298-9e92-1366f0dafe45
+		sourceColumn: journal_name
+
+	column Semana
+		dataType: dateTime
+		lineageTag: 88294b3d-a261-4c1a-a836-38a6ec6d57d3
+		sourceColumn: week_start
+
+	column 'Recuento semanal'
+		dataType: int64
+		isHidden
+		lineageTag: 9c31196c-157e-42b2-8e5e-6a72770d3f62
+		sourceColumn: new_publications
+
+	column 'Con ORCID'
+		dataType: int64
+		isHidden
+		lineageTag: 3f62ece3-f6f0-40dc-acd3-070868caa36b
+		sourceColumn: with_orcid
+
+	column 'Con resumen'
+		dataType: int64
+		isHidden
+		lineageTag: 1d062489-5a18-40bc-9c7c-a2e3c7d6ce65
+		sourceColumn: with_abstract
+
+	column 'Con licencia'
+		dataType: int64
+		isHidden
+		lineageTag: 70c2d095-e7ee-40dd-b175-d0f65e2e79bd
+		sourceColumn: with_license
+
+	partition 'Actividad semanal' = entity
+		mode: directLake
+		source
+			entityName: journal_weekly_activity
+			schemaName: gold
+			expressionSource: 'DirectLake - Crossref'

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "db061f327fa57ba83b33",
+  "position": {
+    "x": 1290,
+    "y": 634,
+    "z": 11000,
+    "height": 250,
+    "width": 582,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Revistas"
+                    }
+                  },
+                  "Property": "Porcentaje con ORCID"
+                }
+              },
+              "queryRef": "Revistas.Porcentaje con ORCID",
+              "nativeQueryRef": "Porcentaje con ORCID"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Revistas"
+                    }
+                  },
+                  "Property": "Porcentaje con resumen"
+                }
+              },
+              "queryRef": "Revistas.Porcentaje con resumen",
+              "nativeQueryRef": "Porcentaje con resumen"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Revistas"
+                    }
+                  },
+                  "Property": "Porcentaje con licencia"
+                }
+              },
+              "queryRef": "Revistas.Porcentaje con licencia",
+              "nativeQueryRef": "Porcentaje con licencia"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "layout": [
+        {
+          "selector": {
+            "id": "default"
+          },
+          "properties": {
+            "autoGrid": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "columnCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "rowCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "3L"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

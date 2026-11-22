@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "9295b6c7553ebfb984ae",
+  "position": {
+    "x": 48,
+    "y": 234,
+    "z": 4000,
+    "height": 318,
+    "width": 890,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Editoriales"
+                    }
+                  },
+                  "Property": "Editorial"
+                }
+              },
+              "queryRef": "Editoriales.Editorial",
+              "nativeQueryRef": "Editorial"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Editoriales"
+                    }
+                  },
+                  "Property": "Publicaciones por editorial"
+                }
+              },
+              "queryRef": "Editoriales.Publicaciones por editorial",
+              "nativeQueryRef": "Publicaciones por editorial"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

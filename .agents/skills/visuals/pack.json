@@ -1,0 +1,60 @@
+{
+  "name": "visuals",
+  "description": "Charts and tables: Vega-Lite specs rendered by <VegaVisual>, tabular data by <DataGrid>, `toDataTable` for feeding either from a query result, and an offline validator that checks readable specs for structural errors before they ship.",
+  "packageJson": "packages/frontend/package.json",
+  "dependencies": {
+    "@microsoft/fabric-datagrid": "5.3.0",
+    "@microsoft/fabric-visuals": "5.3.0",
+    "@microsoft/fabric-visuals-core": "5.3.0",
+    "@microsoft/fabric-visuals-extensibility": "5.2.0",
+    "@microsoft/fabric-slicers": "4.3.0",
+    "@microsoft/fabric-interaction-manager": "1.2.0"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "vega-lite": "^6.4.3",
+    "yaml": "2.9.0"
+  },
+  "scripts": {
+    "validate:visual": "node scripts/validate-visual.mjs",
+    "validate:visual:preview": "node scripts/validate-visual.mjs --allow-incomplete"
+  },
+  "copy": [
+    {
+      "from": "kit/lib/to-data-table.ts",
+      "to": "packages/frontend/src/lib/to-data-table.ts",
+      "seedReplaceIfPristine": [
+        "4b1d1204122631767a0379766b2d97d387645b3613dbdb8699a30812a710864a",
+        "a57ed2125f4f9b44c1a4172e2422d16ee4925f94d1b200d92d03273d04c81a15",
+        "b8fbea31fa1a76d41287d32a61d657c0584eb74a2d0632143b1c0d11db30f5d0",
+        "72feba3a2d50ff22e51d5496d435c51da36a42c26e4ea219a96d593e9ec1eccf",
+        "c67ef37be8748379e545ea4d79028113347155a216a951dea668ee745ad8bf60"
+      ]
+    },
+    {
+      "from": "kit/lib/to-data-table.spec.ts",
+      "to": "packages/frontend/src/lib/to-data-table.spec.ts",
+      "seedReplaceIfPristine": [
+        "1a240c51d6f339e4a31c419fda512cb789e98aca0f735010ed541885a92c0471",
+        "403ee64e10c9e3bfb732dc6608eb1e8f8b9d61230ffdaca67f5ac0427effb4ca",
+        "78bf25022a71dc2ebf483f51272cc0b07344ceabbba9ebde279f00a066c37c0b",
+        "21479fb7a880c5c90b507f3f54d5d44e239f8bab09e15d67fb674a7c24f1d78e"
+      ]
+    },
+    {
+      "from": "kit/scripts/validate-visual.mjs",
+      "to": "scripts/validate-visual.mjs",
+      "seedReplaceIfPristine": [
+        "a3234902cadf1c93407a62f9e288656eab47bea837c3e84235158db5394bee82",
+        "a2d0824a4d1985e10d2ec32a02cb2a6b25d54c58a5d3e7efb22d1c9a5036ca97",
+        "53e1ba7c1dd2a4eb96cfe7dbc3935ddc13a300744db69a0a2ca9ad7fd1d5d95f",
+        "6d5147b8107110c4b122d70e30c546dc118bd4ab652ddc5240408d172f3b5115",
+        "79cde5b62af1e4d359d82e5e60fb00a5b64921f48a81b14944af745218f5ad9c"
+      ]
+    }
+  ],
+  "next": [
+    "visuals",
+    "app-design"
+  ]
+}

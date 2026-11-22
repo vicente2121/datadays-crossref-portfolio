@@ -1,0 +1,141 @@
+{
+  "name": "analytics",
+  "description": "Power BI / semantic-model analytics: the `fabric-semanticmodel` connector and the semantic-model query hook. Add the visuals pack alongside it to chart what the queries return.",
+  "packageJson": "packages/frontend/package.json",
+  "dependencies": {
+    "@microsoft/rayfin-connectors": "match:@microsoft/rayfin-core",
+    "@microsoft/rayfin-connector-fabric-semanticmodel": "match:@microsoft/rayfin-core",
+    "@microsoft/rayfin-lib": "match:@microsoft/rayfin-core",
+    "@microsoft/fabric-visuals-core": "5.3.0",
+    "@microsoft/fabric-interaction-manager": "1.2.0"
+  },
+  "scripts": {
+    "schema:sql": "fabric-app-semantic-model-tools query-schema",
+    "schema:refresh": "fabric-app-semantic-model-tools query-schema --refresh"
+  },
+  "devDependencies": {
+    "@microsoft/fabric-app-semantic-model-tools": "1.2.0"
+  },
+  "gitignore": [
+    ".schema/",
+    ".fabric-app-semantic-model-tools-*/"
+  ],
+  "copy": [
+    {
+      "from": "kit/hooks/use-semantic-model-query.ts",
+      "to": "packages/frontend/src/hooks/use-semantic-model-query.ts",
+      "seedReplaceIfPristine": [
+        "f998aafafeb2abe514276702b70f7356750307dfff00dff5c957c0def189a51d",
+        "c1462a0a2ef7c15707d4194309187c4ab229ebcb940ab1c4e0e2b21d332fffc8",
+        "4b1d13e513589c0f6b691f7faa78444ef5982f05b1d3a4bb3a50789052260c00",
+        "2f8a39e1ba52df7fb8e73ee3a84dbb9beb569276494a48a1bb5c6a716a217b88",
+        "b55ab568f6432066750a0805e25adcbf9ab5ffa60657dbc57edcb6a3194f3429",
+        "c8c1dd2aedbb78b6bc5a459488be9f49181689af5dd852cff3c43e9ee0970912",
+        "a035a14d2638cd470abb46bc20f539a85814135d1d05a29b88d32f311d5d4554",
+        "598d76f921d4d6901e095ce07e9c5675ca22e5f7f5f4034518fc6d5d914ac66f",
+        "fdb185b4d32e226e0748e5fd41cd66fcd7bf740b038aa3a1d3213db37d7dcb57",
+        "62b208680675685cb82e8b8bfca7c303a71f5af149392fca3be0ffea2953f4d3",
+        "999c4d2f1c76f5522a4ce0ed94c84de57386e6738628aeb092b4b7afdd2cdda5",
+        "40cca9dd48aa8b65c28902a811f347a6d52d82357868563d890b2fd68da97382",
+        "726b1a83dd8cd88dab733f34f7eb7422d32f3d044e8a0de1d8611f17b5e099ae"
+      ]
+    },
+    {
+      "from": "kit/hooks/use-semantic-model-query.spec.ts",
+      "to": "packages/frontend/src/hooks/use-semantic-model-query.spec.ts",
+      "seedReplaceIfPristine": [
+        "9a361a6496c070ac481dcc09d542b937931812abdd18ecc7632fa1e39c1cc8f6",
+        "3d3ff874b96d8faaec2c304efec47072dd4a46426a838c73a1005212d192ffda",
+        "db404dd3f70aae823e3a903edcfd958997b920376f9c06de2a40ea93d13a4b7a",
+        "5094d633766cd43c2d16ada4f5a6f46f6adb99b0b82f6aebf117917558343052",
+        "36a99559390f15a25831dd9a4cc30bc68416ac7d7b0ea1a5fe9780d94cf8b149",
+        "373993a40e3180758223cb69517af1c456fe4e175408d4074ad5dcac90e7f4c5",
+        "c299f5e721b0de7036c992f73ab8c34968d4f34a46730d053a8c7500c357bd0e",
+        "9d5684ba70bcc59858a1c205f442209dd2d4f959c2f79fed77b9e05e27d8ebe5",
+        "9dd00d699e5602f94cb9d90747f9e4679f2f35ab74665d4188ac4c6329d5a451",
+        "fd38449cb03816b43620e4e89f9bcec86434e5c3c89f42c9d0fb94e1d8200b5c"
+      ]
+    },
+    {
+      "from": "kit/lib/semantic-model-errors.ts",
+      "to": "packages/frontend/src/lib/semantic-model-errors.ts",
+      "seedReplaceIfPristine": [
+        "a9b52cd589cfc83613fd24e9428a593028e05d3b7f1a5090d3c900385a24e0a0",
+        "e1179639bd3ba0db5a7a015b892482cb23e80818b290167d60110689c807e407",
+        "531369e4f32ec0a8bba7272f51f03186a349d864467fb8e1ebf7d9cf90712d57",
+        "a54d3dce4c42ca9cf5deb842986172856c3ae858f049fc585f1b747594e9f3a7",
+        "e9513e1d58c2c6ccf1815fbc31fa9b573eaa083cef4384e6ecc442c03410cad1"
+      ]
+    },
+    {
+      "from": "kit/lib/semantic-model-errors.spec.ts",
+      "to": "packages/frontend/src/lib/semantic-model-errors.spec.ts",
+      "seedReplaceIfPristine": [
+        "a3c7664741e122f49b6cbf5257a40316774bbefae5ded2927b93ecf80f341468",
+        "592777674afde76a6644ed27d299052635ea938ec2fe3d2a627d263f9c9f2d2b",
+        "bdb015017e57618c7beb7a2ee93e93591c06c308f81590bbe13789491b50519b",
+        "a088b38c0b50e6228cd26babdce4f5b0aa5107028309c121a9a0c9d77875e410"
+      ]
+    },
+    {
+      "from": "kit/lib/query-factory.ts",
+      "to": "packages/frontend/src/lib/query-factory.ts",
+      "seedReplaceIfPristine": [
+        "ba1a3373e4f98fb39990a8456cc685ef5b3155745c81e1a65e5d09dc19e7e810",
+        "d968545d33fe07b2b1ca901bdfaf726b22796d6f18531f480688b83fd495a55a",
+        "9252a75a3dee1285aabf8e621452562e85eda726df3df9e1a4497af8f123a71b"
+      ]
+    },
+    {
+      "from": "kit/lib/query-factory.spec.ts",
+      "to": "packages/frontend/src/lib/query-factory.spec.ts",
+      "seedReplaceIfPristine": [
+        "29f1713017ef0e052b07a12251841d100f6954c3a414389df4a4fdf9f24bfdaf",
+        "033c56950ccc8dca4cf98435dd2d5f5faeecf59d90b3549f02b7b0e3eec2dd93",
+        "65389e85eca3948564abbac99b68d6bef1fe23dd0664374ec2e98dcdd553709c"
+      ]
+    },
+    {
+      "from": "kit/hooks/use-query-factory-target.ts",
+      "to": "packages/frontend/src/hooks/use-query-factory-target.ts",
+      "seedReplaceIfPristine": [
+        "44caf73293a0f8e38cff8f0c880709bb460e3b4e3818af2e0f9a0131fab6de3b",
+        "e982a9b0c51dd87d268e68f5674d5ee9556035375b613bb2ee8587b5256c0e38",
+        "c27d51f07a8d56fa9f2ececb65e7e63f54a0ab1f060efde5fd45f821c7a1fd23"
+      ]
+    },
+    {
+      "from": "kit/hooks/use-query-factory-target.spec.ts",
+      "to": "packages/frontend/src/hooks/use-query-factory-target.spec.ts",
+      "seedReplaceIfPristine": [
+        "c125e0df152a2f10d26bb586ab6d260bf66afa3f3e3287f55637f0ad387f0214",
+        "ba22d48035bd1c4a4df811d1e8bbf40bab702e96df112c064831c36549dce30e",
+        "29a86a4694cbb19ae43cda5e83563a5c3ae587b1a0c5ae0bd271dd0ee867e128"
+      ]
+    },
+    {
+      "from": "kit/lib/to-data-table.ts",
+      "to": "packages/frontend/src/lib/to-data-table.ts",
+      "seedReplaceIfPristine": [
+        "4b1d1204122631767a0379766b2d97d387645b3613dbdb8699a30812a710864a",
+        "a57ed2125f4f9b44c1a4172e2422d16ee4925f94d1b200d92d03273d04c81a15",
+        "b8fbea31fa1a76d41287d32a61d657c0584eb74a2d0632143b1c0d11db30f5d0",
+        "72feba3a2d50ff22e51d5496d435c51da36a42c26e4ea219a96d593e9ec1eccf",
+        "c67ef37be8748379e545ea4d79028113347155a216a951dea668ee745ad8bf60"
+      ]
+    },
+    {
+      "from": "kit/lib/to-data-table.spec.ts",
+      "to": "packages/frontend/src/lib/to-data-table.spec.ts",
+      "seedReplaceIfPristine": [
+        "1a240c51d6f339e4a31c419fda512cb789e98aca0f735010ed541885a92c0471",
+        "403ee64e10c9e3bfb732dc6608eb1e8f8b9d61230ffdaca67f5ac0427effb4ca",
+        "78bf25022a71dc2ebf483f51272cc0b07344ceabbba9ebde279f00a066c37c0b",
+        "21479fb7a880c5c90b507f3f54d5d44e239f8bab09e15d67fb674a7c24f1d78e"
+      ]
+    }
+  ],
+  "next": [
+    "analytics"
+  ]
+}

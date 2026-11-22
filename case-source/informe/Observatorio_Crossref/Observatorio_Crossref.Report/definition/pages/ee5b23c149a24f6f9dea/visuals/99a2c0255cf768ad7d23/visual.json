@@ -1,0 +1,105 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "99a2c0255cf768ad7d23",
+  "position": {
+    "x": 48,
+    "y": 824,
+    "z": 10000,
+    "height": 196,
+    "width": 1824,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Revistas"
+                    }
+                  },
+                  "Property": "Revista"
+                }
+              },
+              "queryRef": "Revistas.Revista",
+              "nativeQueryRef": "Revista"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actividad semanal"
+                    }
+                  },
+                  "Property": "Publicaciones última semana"
+                }
+              },
+              "queryRef": "Actividad semanal.Publicaciones última semana",
+              "nativeQueryRef": "Publicaciones última semana"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actividad semanal"
+                    }
+                  },
+                  "Property": "Media cuatro semanas previas"
+                }
+              },
+              "queryRef": "Actividad semanal.Media cuatro semanas previas",
+              "nativeQueryRef": "Media cuatro semanas previas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actividad semanal"
+                    }
+                  },
+                  "Property": "Variación frente a cuatro semanas"
+                }
+              },
+              "queryRef": "Actividad semanal.Variación frente a cuatro semanas",
+              "nativeQueryRef": "Variación frente a cuatro semanas"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

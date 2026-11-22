@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "./rayfin",
+    "outDir": "./rayfin/.temp/compiled",
+    "lib": ["ES2022", "ESNext.Decorators"],
+    "types": ["node"],
+    "tsBuildInfoFile": "./rayfin/.temp/storage.tsbuildinfo"
+  },
+  "include": ["rayfin/storage/**/*"],
+  "exclude": ["rayfin/.temp", "node_modules"]
+}

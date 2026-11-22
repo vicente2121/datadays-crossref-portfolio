@@ -1,0 +1,7 @@
+/// Origen OneLake del Lakehouse Crossref.
+expression 'DirectLake - Crossref' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/12550784-533f-4c83-9e36-7dd592db8de9/cc43c63b-b7ce-4d5c-aecf-d95aa3f32df4", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: f04e1ffe-9cef-443c-911f-2b5af1df29bc

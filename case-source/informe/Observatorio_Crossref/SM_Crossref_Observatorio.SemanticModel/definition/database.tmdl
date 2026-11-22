@@ -1,0 +1,6 @@
+/// Modelo Direct Lake del observatorio de cinco revistas Crossref
+database SM_Crossref_Observatorio
+	id: 4d0a2329-ca0f-4c87-bca7-abeef00a958b
+	compatibilityLevel: 1702
+	compatibilityMode: powerBI
+	language: 1033

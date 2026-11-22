@@ -1,0 +1,9 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json",
+  "version": "4.0",
+  "datasetReference": {
+    "byConnection": {
+      "connectionString": "Data Source=powerbi://api.powerbi.com/v1.0/myorg/DataDays-Clase03-Crossref-20261121;Initial Catalog=SM_Crossref_Observatorio;Integrated Security=ClaimsToken;semanticModelId=4d0a2329-ca0f-4c87-bca7-abeef00a958b"
+    }
+  }
+}

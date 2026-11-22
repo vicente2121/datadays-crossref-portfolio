@@ -1,0 +1,62 @@
+{
+  "cliVersion": "2.0.1",
+  "items": {
+    "mcp:rayfin": {
+      "sha256": "57eaf1771e2104e6bc301cc98320df3a9eeed56094818bad44fc8492a389bda7",
+      "source": {
+        "id": "@microsoft/rayfin-cli",
+        "kind": "cli",
+        "versionOrSha": "2.0.1"
+      }
+    },
+    "skill:rayfin": {
+      "sha256": "b36973508bdb68a8d49ccfbad5bea0b286f0fc0c52ac2fd406d4d27f63b60b82",
+      "source": {
+        "id": "@microsoft/rayfin-cli",
+        "kind": "cli",
+        "versionOrSha": "2.0.1"
+      }
+    },
+    "skill:rayfin-auth-claims": {
+      "sha256": "3cd7911ed9cfa1127e40da70f4e83cf009a0d62ceb1d03a716aaa45c28e91242",
+      "source": {
+        "id": "@microsoft/rayfin-cli",
+        "kind": "cli",
+        "versionOrSha": "2.0.1"
+      }
+    },
+    "skill:rayfin-connectors": {
+      "sha256": "46360503ed2084678b7a489751fa6335dc212c8c0424f1d83674b1d759a43be6",
+      "source": {
+        "id": "@microsoft/rayfin-cli",
+        "kind": "cli",
+        "versionOrSha": "2.0.1"
+      }
+    },
+    "skill:rayfin-functions": {
+      "sha256": "05332e98796df3527ea644c4f24a9abdadf30baea5a98b1213420fe595b7a173",
+      "source": {
+        "id": "@microsoft/rayfin-cli",
+        "kind": "cli",
+        "versionOrSha": "2.0.1"
+      }
+    },
+    "skill:rayfin-schema-drift": {
+      "sha256": "7b2196fb6ef6de1bd7e1e9693ac71e8634590e94044381e0a64f0b4c00e36131",
+      "source": {
+        "id": "@microsoft/rayfin-cli",
+        "kind": "cli",
+        "versionOrSha": "2.0.1"
+      }
+    },
+    "skill:rayfin-storage": {
+      "sha256": "a6d7c3e1e22aa628484baa3649121debdab8643374550b70939afee382dcb98f",
+      "source": {
+        "id": "@microsoft/rayfin-cli",
+        "kind": "cli",
+        "versionOrSha": "2.0.1"
+      }
+    }
+  },
+  "version": 1
+}

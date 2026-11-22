@@ -1,0 +1,31 @@
+/// Resumen por editorial del conjunto observado.
+table Editoriales
+	lineageTag: 21a44010-6c80-4efb-8f6e-7d3dac8d4ffb
+
+	/// DOI únicos agrupados por editorial.
+	measure 'Publicaciones por editorial' = SUM('Editoriales'[Publicaciones])
+		formatString: #,##0
+		lineageTag: a2971cf6-65f9-4948-adbb-8757108644e7
+
+	/// Cuota de cada editorial dentro del conjunto observado.
+	measure 'Porcentaje de editorial' = DIVIDE([Publicaciones por editorial], CALCULATE([Publicaciones por editorial], REMOVEFILTERS('Editoriales'[Editorial])))
+		formatString: 0.0%
+		lineageTag: c48c97aa-3c7f-4e6c-9db2-4b24121f9492
+
+	column Editorial
+		dataType: string
+		lineageTag: 4cbd1e09-4531-4d55-a01a-7e527a0876f2
+		sourceColumn: publisher_name
+
+	column Publicaciones
+		dataType: int64
+		isHidden
+		lineageTag: b68600f6-2485-40fe-88d2-79dedbb9671c
+		sourceColumn: publications
+
+	partition Editoriales = entity
+		mode: directLake
+		source
+			entityName: publisher_summary
+			schemaName: gold
+			expressionSource: 'DirectLake - Crossref'

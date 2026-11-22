@@ -1,0 +1,26 @@
+/// Calendario semanal continuo para comparar la actividad actual con semanas anteriores.
+table Semanas
+	lineageTag: c2c19345-31ba-46b0-b1a5-094bcddd0eab
+
+	column Semana
+		dataType: dateTime
+		isKey
+		lineageTag: 3f34bbc7-8991-480f-adca-0f6103373cdc
+		sourceColumn: week_start
+
+	column Año
+		dataType: int64
+		lineageTag: b75e0c42-6772-4058-ad21-15aa3108cdbe
+		sourceColumn: year
+
+	column 'Número de semana'
+		dataType: int64
+		lineageTag: 68137d0a-cdbc-4668-a07e-448bfc8922ad
+		sourceColumn: week_number
+
+	partition Semanas = entity
+		mode: directLake
+		source
+			entityName: calendar_week
+			schemaName: gold
+			expressionSource: 'DirectLake - Crossref'

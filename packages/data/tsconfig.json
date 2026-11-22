@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "lib": ["ES2022", "ESNext.Decorators"],
+    "types": ["node"],
+    "tsBuildInfoFile": ".tsbuildinfo"
+  },
+  "include": ["src/**/*", "../auth/*.d.ts"],
+  "exclude": ["dist", "node_modules"],
+  "references": [
+    {
+      "path": "../shared"
+    }
+  ]
+}

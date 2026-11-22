@@ -1,0 +1,37 @@
+/// Recuento por revista y tipo de documento.
+table 'Tipos de documento'
+	lineageTag: 8f4bcea8-8b0e-4281-bd54-8853bfe671dd
+
+	/// DOI únicos agrupados por tipo de documento.
+	measure 'Publicaciones por tipo' = SUM('Tipos de documento'[Publicaciones])
+		formatString: #,##0
+		lineageTag: 561b19b2-d04e-425b-9ec6-0bff2fbb3e4b
+
+	column ISSN
+		dataType: string
+		isHidden
+		lineageTag: 9f73feef-650a-44ef-a4ed-dc095d7e6ff7
+		sourceColumn: issn
+
+	column Revista
+		dataType: string
+		lineageTag: 7dd1d799-8d5d-45b3-8421-77b46aa667f1
+		sourceColumn: journal_name
+
+	column 'Tipo de documento'
+		dataType: string
+		lineageTag: 4ab4b39e-7581-4065-95de-841316748a2b
+		sourceColumn: document_type
+
+	column Publicaciones
+		dataType: int64
+		isHidden
+		lineageTag: 74488709-e2b2-4742-baa5-475151676c12
+		sourceColumn: publications
+
+	partition 'Tipos de documento' = entity
+		mode: directLake
+		source
+			entityName: document_type_summary
+			schemaName: gold
+			expressionSource: 'DirectLake - Crossref'
