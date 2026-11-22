@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "29466f785e5cc1c1a51c",
+  "position": {
+    "x": 970,
+    "y": 234,
+    "z": 6000,
+    "height": 180,
+    "width": 902,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Tipos de documento"
+                    }
+                  },
+                  "Property": "Publicaciones por tipo"
+                }
+              },
+              "queryRef": "Tipos de documento.Publicaciones por tipo",
+              "nativeQueryRef": "Publicaciones por tipo"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "selector": {
+            "id": "default"
+          },
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "cf78df1eb8ed5a1f2df7",
+  "position": {
+    "x": 48,
+    "y": 178,
+    "z": 4000,
+    "height": 150,
+    "width": 1824,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Revistas"
+                    }
+                  },
+                  "Property": "Publicaciones observadas"
+                }
+              },
+              "queryRef": "Revistas.Publicaciones observadas",
+              "nativeQueryRef": "Publicaciones observadas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actividad semanal"
+                    }
+                  },
+                  "Property": "Publicaciones última semana"
+                }
+              },
+              "queryRef": "Actividad semanal.Publicaciones última semana",
+              "nativeQueryRef": "Publicaciones última semana"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actividad semanal"
+                    }
+                  },
+                  "Property": "Variación frente a cuatro semanas"
+                }
+              },
+              "queryRef": "Actividad semanal.Variación frente a cuatro semanas",
+              "nativeQueryRef": "Variación frente a cuatro semanas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ejecuciones"
+                    }
+                  },
+                  "Property": "Estado última carga"
+                }
+              },
+              "queryRef": "Ejecuciones.Estado última carga",
+              "nativeQueryRef": "Estado última carga"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "selector": {
+            "id": "default"
+          },
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

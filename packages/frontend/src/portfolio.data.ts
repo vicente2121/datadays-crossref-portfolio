@@ -8,6 +8,7 @@ export const caseStudy = {
   intro: 'Cinco revistas, una ingesta incremental de metadatos Crossref y un observatorio para entender actividad, editoriales y calidad descriptiva.',
   disclosure: 'Portafolio documental del caso de clase. Las cifras publicadas en el informe original corresponden a su ejecución.',
   sourceUrl: `${source}/tree/main/${path}`,
+  reportUrl: 'https://app.fabric.microsoft.com/groups/0245bb51-e0d1-40f1-b071-fcbbf1d7b155/reports/039172b3-f877-437c-928e-37dd706d0968',
   flow: 'CROSSREF → BRONZE → SILVER → GOLD → POWER BI',
   metrics: [
     { value: '5', label: 'revistas incluidas en el alcance' },
@@ -32,8 +33,9 @@ export const caseStudy = {
     { question: '¿Qué tipos de documento aparecen?', answer: 'Distribución por tipo dentro de los cinco ISSN seleccionados.' },
     { question: '¿Qué tan completos son los metadatos?', answer: 'Cobertura de ORCID, resumen y licencia, global y por revista.' },
   ],
-  limit: 'El observatorio cubre cinco revistas concretas; sus proporciones no describen todo Crossref. El informe original mantiene referencias al workspace de la clase y se debe volver a vincular para una réplica independiente.',
+  limit: 'El observatorio cubre cinco revistas concretas; sus proporciones no describen todo Crossref. El informe publicado ya está vinculado al Lakehouse de este workspace y requiere acceso a sus elementos para verlo.',
   artifacts: [
+    { title: 'Informe en Fabric', description: 'Actividad y calidad del observatorio publicado', href: 'https://app.fabric.microsoft.com/groups/0245bb51-e0d1-40f1-b071-fcbbf1d7b155/reports/039172b3-f877-437c-928e-37dd706d0968', kind: 'repo' },
     { title: 'Guía de replicación', description: 'Alcance, pasos y comprobaciones', href: `${source}/blob/main/${path}/infraestructura/GUIA_REPLICACION_MANUAL.md`, kind: 'guide' },
     { title: 'Notebook PySpark', description: 'Ingesta incremental y capas Medallion', href: `${source}/blob/main/${path}/notebooks/crossref_incremental.py`, kind: 'code' },
     { title: 'Pipeline', description: 'Definición de referencia para orquestar', href: `${source}/tree/main/${path}/pipelines`, kind: 'code' },

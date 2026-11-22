@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "0330b5e7111042092ea7",
+  "position": {
+    "x": 48,
+    "y": 398,
+    "z": 6000,
+    "height": 360,
+    "width": 1100,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Semanas"
+                    }
+                  },
+                  "Property": "Semana"
+                }
+              },
+              "queryRef": "Semanas.Semana",
+              "nativeQueryRef": "Semana"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Revistas"
+                    }
+                  },
+                  "Property": "Revista"
+                }
+              },
+              "queryRef": "Revistas.Revista",
+              "nativeQueryRef": "Revista"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actividad semanal"
+                    }
+                  },
+                  "Property": "Publicaciones últimas cinco semanas"
+                }
+              },
+              "queryRef": "Actividad semanal.Publicaciones últimas cinco semanas",
+              "nativeQueryRef": "Publicaciones últimas cinco semanas"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

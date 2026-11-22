@@ -1,0 +1,23 @@
+{
+  "properties": {
+    "description": "Carga diaria de Crossref con watermark, Bronze, Silver y Gold.",
+    "activities": [
+      {
+        "name": "Cargar_Crossref_Bronze_Silver_Gold",
+        "type": "TridentNotebook",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.03:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 180,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "bb329a93-7a3d-4e81-b770-4fb933b5e2dd",
+          "workspaceId": "0245bb51-e0d1-40f1-b071-fcbbf1d7b155"
+        }
+      }
+    ]
+  }
+}

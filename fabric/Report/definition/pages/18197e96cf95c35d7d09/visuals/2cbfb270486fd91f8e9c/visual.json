@@ -1,0 +1,119 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "2cbfb270486fd91f8e9c",
+  "position": {
+    "x": 48,
+    "y": 634,
+    "z": 9000,
+    "height": 380,
+    "width": 1208,
+    "tabOrder": 9
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Revistas"
+                    }
+                  },
+                  "Property": "Revista"
+                }
+              },
+              "queryRef": "Revistas.Revista",
+              "nativeQueryRef": "Revista"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Revistas"
+                    }
+                  },
+                  "Property": "Publicaciones observadas"
+                }
+              },
+              "queryRef": "Revistas.Publicaciones observadas",
+              "nativeQueryRef": "Publicaciones observadas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Revistas"
+                    }
+                  },
+                  "Property": "Porcentaje con ORCID"
+                }
+              },
+              "queryRef": "Revistas.Porcentaje con ORCID",
+              "nativeQueryRef": "Porcentaje con ORCID"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Revistas"
+                    }
+                  },
+                  "Property": "Porcentaje con resumen"
+                }
+              },
+              "queryRef": "Revistas.Porcentaje con resumen",
+              "nativeQueryRef": "Porcentaje con resumen"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Revistas"
+                    }
+                  },
+                  "Property": "Porcentaje con licencia"
+                }
+              },
+              "queryRef": "Revistas.Porcentaje con licencia",
+              "nativeQueryRef": "Porcentaje con licencia"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

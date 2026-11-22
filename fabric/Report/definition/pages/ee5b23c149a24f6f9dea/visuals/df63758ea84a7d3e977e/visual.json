@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "df63758ea84a7d3e977e",
+  "position": {
+    "x": 1184,
+    "y": 398,
+    "z": 8000,
+    "height": 360,
+    "width": 688,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Revistas"
+                    }
+                  },
+                  "Property": "Revista"
+                }
+              },
+              "queryRef": "Revistas.Revista",
+              "nativeQueryRef": "Revista"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Actividad semanal"
+                    }
+                  },
+                  "Property": "Publicaciones última semana"
+                }
+              },
+              "queryRef": "Actividad semanal.Publicaciones última semana",
+              "nativeQueryRef": "Publicaciones última semana"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

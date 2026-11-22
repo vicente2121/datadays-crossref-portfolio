@@ -1,0 +1,11 @@
+relationship 'Actividad semanal a Revistas'
+	fromColumn: 'Actividad semanal'.ISSN
+	toColumn: Revistas.ISSN
+
+relationship 'Tipos de documento a Revistas'
+	fromColumn: 'Tipos de documento'.ISSN
+	toColumn: Revistas.ISSN
+
+relationship 'Actividad a semanas'
+	fromColumn: 'Actividad semanal'.Semana
+	toColumn: Semanas.Semana

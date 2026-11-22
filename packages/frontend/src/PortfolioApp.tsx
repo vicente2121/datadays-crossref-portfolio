@@ -46,6 +46,7 @@ export default function PortfolioApp() {
           <p className="portfolio__hero-intro">{caseStudy.intro}</p>
           <div className="portfolio__hero-actions">
             <a className="portfolio__button portfolio__button--primary" href="#caso">Explorar el caso <ArrowRight aria-hidden="true" /></a>
+            <a className="portfolio__button portfolio__button--quiet" href={caseStudy.reportUrl} target="_blank" rel="noreferrer">Ver informe en Fabric <ArrowUpRight aria-hidden="true" /></a>
             <a className="portfolio__button portfolio__button--quiet" href={caseStudy.sourceUrl} target="_blank" rel="noreferrer">Material original <ArrowUpRight aria-hidden="true" /></a>
           </div>
           <p className="portfolio__hero-note">{caseStudy.disclosure}</p>

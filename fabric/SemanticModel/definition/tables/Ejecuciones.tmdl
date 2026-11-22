@@ -1,0 +1,52 @@
+/// Auditoría de las cargas incrementales del pipeline.
+table Ejecuciones
+	lineageTag: badcd1a2-10a5-4ce4-9b50-668cbace74e1
+
+	/// Estado de la ejecución más reciente del pipeline.
+	measure 'Estado última carga' =
+			VAR _estado = MAXX(TOPN(1, 'Ejecuciones', 'Ejecuciones'[Fin], DESC), 'Ejecuciones'[Estado])
+			RETURN SWITCH(_estado, "Succeeded", "Correcta", "Failed", "Fallida", _estado)
+		lineageTag: 83dd7d33-08ee-4f63-a526-545827829a64
+
+	column 'ID de ejecución'
+		dataType: string
+		isHidden
+		lineageTag: f101fed0-22a1-4d0c-b2fe-d8c820b1fafb
+		sourceColumn: run_id
+
+	column Inicio
+		dataType: dateTime
+		lineageTag: 5d54bd34-a6b5-42ca-aab3-03b397f62214
+		sourceColumn: started_at
+
+	column Fin
+		dataType: dateTime
+		lineageTag: 192ec877-6993-4536-a1dc-2a03913bc92a
+		sourceColumn: finished_at
+
+	column Páginas
+		dataType: int64
+		lineageTag: f8568c36-b397-4e74-8a13-ed6adfe61397
+		sourceColumn: pages
+
+	column 'Filas leídas'
+		dataType: int64
+		lineageTag: e21f8723-4e16-4e4e-b893-b221f36597a1
+		sourceColumn: rows_read
+
+	column 'DOI válidos'
+		dataType: int64
+		lineageTag: fd23dc36-10a6-4879-ab00-b90ed65f70f3
+		sourceColumn: rows_valid
+
+	column Estado
+		dataType: string
+		lineageTag: fac7de74-e03d-4b55-9f4c-02ba7b44571a
+		sourceColumn: status
+
+	partition Ejecuciones = entity
+		mode: directLake
+		source
+			entityName: crossref_runs
+			schemaName: dbo
+			expressionSource: 'DirectLake - Crossref'

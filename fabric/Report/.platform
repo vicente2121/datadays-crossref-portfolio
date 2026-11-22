@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "DD03_Informe_Crossref"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2ad20cb0-655c-40de-94d1-e0453d55c4c8"
+  }
+}

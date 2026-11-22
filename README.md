@@ -2,6 +2,8 @@
 
 Fabric App tipo portafolio del caso 03 de DP-600: ingesta incremental de metadatos de cinco revistas científicas desde Crossref, transformación Medallion y análisis de actividad y calidad en Power BI. La app explica la solución; **no consulta Crossref en directo**.
 
+**Publicado:** [Fabric App](https://rural-unity-56e33da5da-spaincentral.webapp.fabricapps.net) · [Informe Power BI](https://app.fabric.microsoft.com/groups/0245bb51-e0d1-40f1-b071-fcbbf1d7b155/reports/039172b3-f877-437c-928e-37dd706d0968) · workspace `DataDays-FabricApps-Portfolio-DEV` / carpeta `03-Crossref`.
+
 ## Explora la solución
 
 | Parte | Contenido |
@@ -10,6 +12,7 @@ Fabric App tipo portafolio del caso 03 de DP-600: ingesta incremental de metadat
 | [`case-source/notebooks/`](case-source/notebooks/) | Notebook PySpark de carga incremental |
 | [`case-source/pipelines/`](case-source/pipelines/) | Definición de referencia del pipeline |
 | [`case-source/informe/`](case-source/informe/) | PBIP con informe y modelo Direct Lake |
+| [`fabric/`](fabric/) | Copias de despliegue vinculadas al modelo y Lakehouse nuevos |
 | [`case-source/infraestructura/`](case-source/infraestructura/) | Guía de replicación y PDF |
 | [`case-source/requisitos/`](case-source/requisitos/) | Preguntas de negocio y medidas del caso |
 | [`docs/proyecto.md`](docs/proyecto.md) | Workspace, carpeta e inventario de recursos de esta app |
